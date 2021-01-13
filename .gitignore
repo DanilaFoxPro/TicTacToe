@@ -7,4 +7,5 @@ obj/*
 *.o
 
 # Eeeh.
-Makefile.win
+Makefile.win 
+*.layout
