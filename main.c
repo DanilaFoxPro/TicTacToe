@@ -1,11 +1,19 @@
 #include <stdio.h>
-
+#include<string.h>
 int main()
 {
-	int num = 3;
-	
+	char password[20] = "human";
+	char pass[20];
 	printf( "Hello world!\n" );
-	printf( "The num is %d!", num );
-	
+	printf("enter your password: ");
+	gets(pass);
+	if(strcmp ( password, pass)==0)
+	{
+		printf("the password is correct");
+	}
+	else
+	{
+		printf("wrong password");
+	}
 	return 0;
 }
