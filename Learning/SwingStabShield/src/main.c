@@ -1,18 +1,18 @@
 #include<stdio.h>
 #include <string.h>
-int operation( char* user_input, char* swing, char* stab,char* shield )
+char* operation( char user_input[8], char* swing[], char* stab[],char* shield[] )
 {
      if(strcmp(user_input,swing)==0){ //if input is swing, the function returns 1
-     	return 1;
+     	return swing;
 	 }
 	 else if (strcmp(user_input,stab)==0){ //if input is stab, the function returns 2
-	 	return 2;
+	 	return stab;
 	 }
 	 else if (strcmp(user_input,shield)==0){ //if input is shield, the function returns 3
-	 	return 3;
+	 	return shield;
 	 }
 	 else{ //if input is any random alphabet or number, the function returns 0
-	 	return 0;
+	 	return ;
 	 }
 }
 
@@ -31,17 +31,18 @@ int main()
 
 	
 	char user_input[8];
-	gets(user_input); 
-	int i;
+	 
+
 	//operation(user_input,swing,stab,shield);
 	//printf("return value of function is %d\n", operation( user_input, swing,  stab, shield ));
-	while(i<2)
+	while(health>=0)
 	{
-		
+		gets(user_input); 
     if(operation(user_input, swing ,stab,shield)){ //user input is compared with swing 
 	printf("health falls by 5 percent \n");
 	health = health - (health*0.05); //need to fix this
 	printf("health of barrel is %d \n",health); 
+	break;
 		}
 		
 	
@@ -49,17 +50,18 @@ int main()
  		printf("health falls by 20 percent");
  		health = health - (health*0.2); //need to fix this
  		printf("health of the barrel is %d \n",health);
+ 		break;
 	}
 	
 	else if (operation(user_input,swing,stab,shield)){ //input is compared with shield
 		printf("You are protected, health remains same \n Health of the barrel is %d \n", health);
+		break;
 	
 	}
 	else{
 		printf("Enter valid attack option \n"); //to print when proper option is not entered
+		break;
 	}
-	i++;
+	health--;
 }
 }
-	
-
