@@ -6,35 +6,19 @@ Print the contents of a 'string' as numbers.
 */
 #include<stdio.h>
 #include<string.h>
-char* useless(char a[])
-{
- return a;
-}
 int main()
 {
-	char name[]= "hueh";
-	char string[10];
-	int value;
 	int i;
+	char string[10];
+	char *p = string; //declaring char pointer
 	printf("enter string  \n");
-	scanf("%s",&string);
-	
-	if(1){
-		printf("woah\n\n");
-	}
-	
-	for(i=0;string[i]!=0;i++)
+	scanf("%s", p); //string input 
+
+	for(i=0;string[i]!=0;i++) //string last charcter is 0 so...
 	{
-		
-printf("The Character at %d Index Position = %c \n\n", i, string[i]);
-printf("The memory at which %c is stored is %x \n\n",string[i],string[i]);
-}
- printf("%s", useless("human\n"));
- for(value=4097;value>=129;	value=(value/2)+1)
- {
- 	printf("%d\n", value);
- }
- printf("wkwkwk\n");
- printf("%s\n",name);
- printf("%c",name);
+printf("The Character at %d Index Position = %c \n\n", i, string[i]); //printing every character 
+printf("The memory at which %c is stored is %p \n\n",string[i], (void*)(&string[i]));//%p is for printing pointer addressprovided it is of void poniter type
+//printf("The memory at which %c is stored is %i \n\n",string[i], (int)(&string[i])); //integer type to character pointer
+    }
+    return 0;
 }
